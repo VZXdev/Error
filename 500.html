@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseWithRobux - Maintenance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+        }
+        .gradient-border {
+            border: 2px solid transparent;
+            border-radius: 0.5rem;
+            background: linear-gradient(#111827, #111827) padding-box,
+                        linear-gradient(to right, #3b82f6, #8b5cf6) border-box;
+        }
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.8); }
+            100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+        }
+        .glow-box {
+            animation: glow 3s infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
+    <header class="py-6 px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center glow-box">
+                    <i class="fas fa-cube text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                    CaseWithRobux
+                </h1>
+            </div>
+            <div class="hidden md:block">
+                <span class="px-3 py-1 bg-blue-900/50 text-blue-300 rounded-full text-sm">
+                    <i class="fas fa-wifi text-xs mr-1"></i> Status: Maintenance
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+        <div class="w-full max-w-3xl mx-auto text-center gradient-border p-8 md:p-10 lg:p-12 pulse-animation">
+            <div class="w-24 h-24 mx-auto mb-8 bg-blue-900/30 rounded-full flex items-center justify-center glow-box">
+                <i class="fas fa-tools text-4xl text-blue-400"></i>
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 glow-text">
+                Scheduled Maintenance
+            </h2>
+            <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+                We're currently performing essential technical upgrades to enhance your experience on CaseWithRobux.
+                Our team is working hard to bring you improved features and better performance.
+            </p>
+            
+            <div class="mb-10">
+                <div class="h-2 bg-gray-800 rounded-full overflow-hidden mb-2">
+                    <div id="progress-bar" class="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full progress-bar" style="width: 75%"></div>
+                </div>
+                <p class="text-sm text-gray-400" id="countdown">Estimated completion: 75%</p>
+                <p class="text-xs text-gray-500 mt-1" id="time-remaining">Time remaining: Calculating...</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                <div class="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-800/70 transition duration-300">
+                    <i class="fas fa-server text-blue-400 text-2xl mb-2"></i>
+                    <h3 class="font-semibold mb-1">Server Upgrade</h3>
+                    <p class="text-sm text-gray-400">Improving infrastructure for better stability</p>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-800/70 transition duration-300">
+                    <i class="fas fa-shield-alt text-purple-400 text-2xl mb-2"></i>
+                    <h3 class="font-semibold mb-1">Security Enhancements</h3>
+                    <p class="text-sm text-gray-400">Implementing advanced protection measures</p>
+                </div>
+                <div class="bg-gray-800/50 p-4 rounded-lg hover:bg-gray-800/70 transition duration-300">
+                    <i class="fas fa-bolt text-yellow-400 text-2xl mb-2"></i>
+                    <h3 class="font-semibold mb-1">Performance Boost</h3>
+                    <p class="text-sm text-gray-400">Optimizing for faster load times</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800/30 p-4 rounded-lg mb-8 glow-box">
+                <h3 class="font-semibold text-blue-400 mb-2">
+                    <i class="far fa-clock mr-2"></i> Expected Completion
+                </h3>
+                <p class="text-xl" id="completion-date">September 1, 2025 - 18:00 UTC</p>
+                <p class="text-sm text-gray-400 mt-1">We appreciate your patience during this process</p>
+            </div>
+            
+            <div class="bg-gray-800/20 p-4 rounded-lg">
+                <h3 class="font-semibold text-purple-400 mb-2">
+                    <i class="fas fa-info-circle mr-2"></i> Status Updates
+                </h3>
+                <p class="text-sm text-gray-300">
+                    Follow our <a href="#" class="text-blue-400 hover:text-blue-300 underline">Twitter</a> or 
+                    <a href="#" class="text-purple-400 hover:text-purple-300 underline">Discord</a> for real-time updates.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-6 px-4 sm:px-6 lg:px-8 bg-gray-800/30 mt-8">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-400">&copy; 2025 CaseWithRobux. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-purple-400 transition">
+                        <i class="fab fa-discord text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-red-400 transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Configuration
+        const TARGET_DATE = new Date('September 1, 2025 18:00:00 UTC');
+        const MAINTENANCE_START = new Date('August 30, 2025 12:00:00 UTC');
+        const TOTAL_DURATION = TARGET_DATE - MAINTENANCE_START;
+        
+        // DOM Elements
+        const progressBar = document.getElementById('progress-bar');
+        const countdownElement = document.getElementById('countdown');
+        const timeRemainingElement = document.getElementById('time-remaining');
+        
+        // Update progress and countdown
+        function updateProgress() {
+            const now = new Date();
+            const elapsed = now - MAINTENANCE_START;
+            const remaining = TARGET_DATE - now;
+            
+            // Calculate percentage (capped at 99% until completed)
+            let percentage = Math.min(99, Math.max(0, (elapsed / TOTAL_DURATION) * 100));
+            progressBar.style.width = `${percentage}%`;
+            
+            // Update countdown text
+            if (remaining <= 0) {
+                countdownElement.textContent = "Maintenance completed!";
+                progressBar.style.width = '100%';
+                timeRemainingElement.textContent = "Service restored successfully";
+                
+                // Check if we should reload the page (simulating completion)
+                if (percentage >= 100) {
+                    setTimeout(() => {
+                        document.body.innerHTML = `
+                            <div class="min-h-screen bg-gray-900 flex items-center justify-center">
+                                <div class="text-center p-8 gradient-border">
+                                    <i class="fas fa-check-circle text-5xl text-green-400 mb-4"></i>
+                                    <h2 class="text-3xl font-bold text-white mb-4">Maintenance Complete</h2>
+                                    <p class="text-gray-300 mb-6">CaseWithRobux is now back online with exciting improvements!</p>
+                                    <button onclick="window.location.reload()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+                                        Continue to Site
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    }, 2000);
+                }
+                return;
+            }
+            
+            // Calculate time components
+            const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+            
+            // Update elements
+            countdownElement.textContent = `Estimated completion: ${Math.round(percentage)}%`;
+            
+            let timeRemainingText = "Time remaining: ";
+            if (days > 0) timeRemainingText += `${days}d `;
+            if (hours > 0 || days > 0) timeRemainingText += `${hours}h `;
+            timeRemainingText += `${minutes}m ${seconds}s`;
+            
+            timeRemainingElement.textContent = timeRemainingText;
+        }
+        
+        // Initialize and update every second
+        updateProgress();
+        setInterval(updateProgress, 1000);
+        
+        // Simulate progress updates (for demonstration only)
+        // In a real scenario, this would be replaced with actual progress data from the server
+        let simulatedProgress = 75;
+        function simulateProgressUpdate() {
+            if (simulatedProgress < 100) {
+                simulatedProgress += Math.random() * 0.1;
+                progressBar.style.width = `${simulatedProgress}%`;
+                countdownElement.textContent = `Estimated completion: ${Math.round(simulatedProgress)}%`;
+            }
+        }
+        
+        // Uncomment the line below to enable simulated progress for demonstration
+        // setInterval(simulateProgressUpdate, 5000);
+    </script>
+</body>
+</html>
